@@ -1,0 +1,12 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: ribbon
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaulZone: http://${eureka.instance.hostname}:8761/eureka/

@@ -1,0 +1,20 @@
+server:
+  port: 8060
+spring:
+  application:
+    name: hystrix
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaulZone: http://${eureka.instance.hostname}:8761/eureka/
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'hystrix.stream'

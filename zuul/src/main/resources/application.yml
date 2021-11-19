@@ -1,0 +1,15 @@
+server:
+  port: 8030
+
+spring:
+  application:
+    name: geteway
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaulZone: http://${eureka.instance.hostname}:8761/eureka/
+zuul:
+  routes:
+    provider: /p/**
